@@ -15,7 +15,7 @@ Console.WriteLine("Байты текста UTF-8:");
 Console.WriteLine(BitConverter.ToString(textBytes));
 
 
-string text2 = "Привет";
+string text2 = "ABC";
 byte[] textBytes2 = Encoding.UTF8.GetBytes(text2);
 Console.WriteLine();
 Console.WriteLine($"Текст: {text2}");
@@ -46,3 +46,8 @@ int restored2 = BitConverter.ToInt32(bytes2, 0);
 Console.WriteLine($"Исходное число: {number2}");
 Console.WriteLine($"Восстановленное: {restored2}");
 Console.WriteLine($"Байты: {BitConverter.ToString(bytes2)}");
+
+
+byte[] data = { 0x41, 0x42, 0x43 };
+Console.WriteLine($"Байты: {BitConverter.ToString(data)}");
+Console.WriteLine($"Как текст UTF-8: {Encoding.UTF8.GetString(data)}");
